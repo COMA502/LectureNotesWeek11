@@ -15,11 +15,18 @@ public class Problem1 {
     public static void main(String[] args) {
         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(100, 120, 30, 405, 51, 99, 101));
 
-        numbers.sort(Integer::compareTo);
-        for(Integer number : numbers) {
-            if(number >= 100) {
-                System.out.println(number);
-            }
-        }
+        numbers.stream()
+                .sorted()
+                .filter((Integer i) -> i >= 100)
+//                .forEach((Integer i) -> System.out.println(i));
+//                .forEach(i -> System.out.println(i));
+                .forEach(System.out::println);
+
+//        numbers.sort(Integer::compareTo);
+//        for(Integer number : numbers) {
+//            if(number >= 100) {
+//                System.out.println(number);
+//            }
+//        }
     }
 }
